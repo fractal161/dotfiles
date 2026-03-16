@@ -1,0 +1,18 @@
+[env]
+TERM = "alacritty"
+
+[font]
+size = 8
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control"
+
+[window]
+title = "Term"
+
+# [[keyboard.bindings]]
+# key = "Return"
+# mods = "Shift"
+# chars = "\x1b\r"
