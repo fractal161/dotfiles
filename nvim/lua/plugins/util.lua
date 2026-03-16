@@ -7,20 +7,40 @@ return {
         "kylechui/nvim-surround",
         version = "*",
         event = "VeryLazy",
+        init = function()
+            vim.g.nvim_surround_no_mappings = true
+        end,
         config = function()
-            require("nvim-surround").setup({
-                keymaps = {
-                    insert          = '<C-g>z',
-                    insert_line     = 'gC-ggZ',
-                    normal          = 'gz',
-                    normal_cur      = 'gZ',
-                    normal_line     = 'gzz',
-                    normal_cur_line = 'gZZ',
-                    visual          = 'gz',
-                    visual_line     = 'gZ',
-                    delete          = 'gzd',
-                    change          = 'gzc',
-                }
+            require("nvim-surround").setup({})
+            vim.keymap.set("i", "<C-g>z", "<Plug>(nvim-surround-insert)", {
+                desc = "Surround: add around cursor (insert)"
+            })
+            vim.keymap.set("i", "<C-g>Z", "<Plug>(nvim-surround-insert-line)", {
+                desc = "Surround: add around cursor on new lines (insert)"
+            })
+            vim.keymap.set("n", "gz",  "<Plug>(nvim-surround-normal)", {
+                desc = "Surround: add around motion"
+            })
+            vim.keymap.set("n", "gZ",  "<Plug>(nvim-surround-normal-cur)", {
+                desc = "Surround: add around current line"
+            })
+            vim.keymap.set("n", "gzz", "<Plug>(nvim-surround-normal-line)", {
+                desc = "Surround: add around motion on new lines"
+            })
+            vim.keymap.set("n", "gZZ", "<Plug>(nvim-surround-normal-cur-line)", {
+                desc = "Surround: add around current line on new lines"
+            })
+            vim.keymap.set("x", "gz",  "<Plug>(nvim-surround-visual)", {
+                desc = "Surround: add around visual selection"
+            })
+            vim.keymap.set("x", "gZ",  "<Plug>(nvim-surround-visual-line)", {
+                desc = "Surround: add around visual selection on new lines"
+            })
+            vim.keymap.set("n", "gzd", "<Plug>(nvim-surround-delete)", {
+                desc = "Surround: delete"
+            })
+            vim.keymap.set("n", "gzc", "<Plug>(nvim-surround-change)", {
+                desc = "Surround: change"
             })
         end
     },

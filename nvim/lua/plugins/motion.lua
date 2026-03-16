@@ -1,6 +1,6 @@
 return {
     {
-        "ggandor/leap.nvim",
+        url = "https://codeberg.org/andyg/leap.nvim",
         lazy = false, -- see https://github.com/ggandor/leap.nvim/issues/191
         config = function ()
             -- require("leap").create_default_mappings()
