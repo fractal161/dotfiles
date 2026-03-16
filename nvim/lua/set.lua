@@ -23,4 +23,4 @@ vim.g.vimtex_compiler_latexmk = {
 vim.g.vimtex_view_general_viewer = "evince"
 
 -- Python
-vim.g.python3_host_prog = "/home/justin/.asdf/installs/python/3.12.3/bin/python3"
+vim.g.python3_host_prog = vim.env.NVIM_PYPATH
