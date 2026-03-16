@@ -1,18 +1,16 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        config = function ()
-            require("nvim-treesitter.configs").setup {
-                ensure_installed = { "html", "gotmpl" },
-                highlight = {
-                    enable = true,
-                    -- disable = { "vimdoc" },
-                },
-                indent = {
-                    enable = true,
-                },
-            }
-        end,
+        opts = {
+            ensure_installed = { "html", "gotmpl" },
+            highlight = {
+                enable = true,
+                -- disable = { "vimdoc" },
+            },
+            indent = {
+                enable = true,
+            },
+        },
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
